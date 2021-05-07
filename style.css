@@ -1,0 +1,221 @@
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --grey: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.wrapper {
+  padding: 2em 1em 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Libre Franklin";
+  max-width: 700px;
+}
+
+.container header {
+  margin: 1em 0;
+}
+
+.container header > img {
+  width: 60px;
+}
+
+.text {
+  margin: 1em 0;
+}
+
+.text .heading {
+  font-weight: 300;
+  color: var(--grey);
+  margin-bottom: 0.5em;
+  font-size: clamp(20px, 7vw, 35px);
+  word-wrap: break-word;
+}
+
+.text .heading span {
+  font-weight: 700;
+  color: black;
+}
+
+.text .some-text {
+  font-size: clamp(10px, 3.7vw, 18px);
+}
+
+.form-container {
+  width: 100%;
+  margin-bottom: 1em;
+  display: grid;
+  place-items: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.input-container {
+  max-width: 450px;
+  width: 100%;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.input-container.error::after{
+    content:'Please provide a valid email address';
+    position: absolute;
+    display: block;
+    font-family: 'Libre Franklin';
+    font-size: 0.73em;
+    left:1em;
+    font-style: italic;
+    color:var(--light-red)
+}
+
+.input-container.error input{
+    border:1.5px solid var(--light-red);
+}
+
+.input-container input {
+  width: 100%;
+  outline: none;
+  padding: 0.7em 1.3em;
+  border: 1px solid var(--grey);
+  border-radius: 20px;
+  color: black;
+  font-family: "Libre Franklin";
+}
+
+.input-container input::placeholder {
+  color: var(--grey);
+  font-family: "Libre Franklin";
+}
+
+#button {
+  display: block;
+  min-width: 100px;
+  background-color: var(--blue);
+  border: none;
+  outline: none;
+  font-family: "Libre Franklin";
+  color: white;
+  font-weight: 600;
+  font-size: 0.7em;
+  width: 90%;
+  padding: 1em 1em;
+  border-radius: 20px;
+  box-shadow: 0 5px 1px hsla(223, 87%, 63%, 0.2);
+  cursor: pointer;
+  transition: color 0.15s linear;
+  max-width: 300px;
+}
+
+#button:hover {
+  color: var(--pale-blue);
+}
+
+.container .image img {
+  width: 100%;
+  margin: 1em 0;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5em;
+  margin: 1.5em 0;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--pale-blue);
+  list-style: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s linear;
+  color: var(--blue);
+}
+
+.icon:hover {
+  color: white;
+  background-color: var(--blue);
+  border: none;
+}
+
+.icon.insta {
+  color: rgba(255, 0, 106, 0.986);
+}
+
+.icon.insta:hover {
+  color: white;
+  background-color: rgba(255, 0, 106, 0.986);
+}
+
+.copy-right {
+  font-family: "Libre Franklin";
+  font-size: 0.85em;
+  color: var(--pale-blue);
+  margin-bottom: 1em;
+}
+
+.attribution {
+  font-size: 9px;
+  text-align: center;
+  color: var(--light-red);
+}
+.attribution a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+@media only screen and (min-width:600px){
+    .form-container form{
+        flex-direction: row;
+        gap:0.8em;
+    }
+
+    .form-container form .input-container {
+        margin-bottom: 0;
+    }
+
+    .form-container form #button {
+        flex-grow: 1;
+        max-width: 150px;
+    }
+}
